@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Affairs Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: white; /* Sets the background color of the body to white */
+            color: #333; /* Sets the text color to a dark gray for better readability */
+            font-family: Arial, sans-serif; /* Sets the font family for the text */
+            margin: 0; /* Removes default margin around the body */
+            padding: 20px; /* Adds padding around the body */
+        }
+        .container {
+            max-width: 800px; /* Sets a maximum width for the container */
+            margin: auto; /* Centers the container on the page */
+            text-align: center; /* Centers the text inside the container */
+        }
+        h1 {
+            font-size: 2.5em; /* Sets the font size for the title */
+            margin-bottom: 20px; /* Adds space below the title */
+            display: flex; /* Uses flexbox for layout */
+            align-items: center; /* Vertically centers items */
+        }
+        img.logo {
+            width: 50px; /* Sets the width of the logo image */
+            height: auto; /* Maintains aspect ratio */
+            margin-right: 15px; /* Adds space between the logo and the title */
+        }
+        .links {
+            display: flex; /* Uses flexbox for layout */
+            justify-content: center; /* Centers the links horizontally */
+            margin-top: 20px; /* Adds space above the links */
+        }
+        a {
+            background: #007BFF; /* Sets the background color of links */
+            color: white; /* Sets the text color of links to white */
+            padding: 0.5em 1em; /* Adds padding around the link text */
+            text-decoration: none; /* Removes underline from links */
+            border-radius: 5px; /* Rounds the corners of the link */
+            margin: 0 10px; /* Adds space between the links */
+            transition: background 0.3s ease; /* Adds a transition effect for background color on hover */
+        }
+        a:hover {
+            background: #0056b3; /* Changes the background color of the link when hovered */
+        }
+
+        /* New CSS for rounded images and float */
+        .rounded {
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .float-start {
+            float: left; /* Float to the left */
+            margin-right: 15px; /* Space on the right */
+        }
+
+        .float-end {
+            float: right; /* Float to the right */
+            margin-left: 15px; /* Space on the left */
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <header class="clearfix">
+        <h1>
+            <img src="311681556_522634209871418_1802501451124702131_n.png" class="rounded float-start" alt="Left Logo" style="width: 200px; height: 200px;">
+            Office of Student Affairs and Services
+            <img src="461869133_855526913376857_1666066717944609366_n.png" class="rounded float-end" alt="Right Logo" style="width: 200px; height: 200px;">
+        </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScoiMclv6tcr256Rp0xaD30j3KYG7abYqsNt0oMXS5-pBbxjQ/viewform?usp=sf_link" target="_blank" class="form-link">Submit your Data</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScoiMclv6tcr256Rp0xaD30j3KYG7abYqsNt0oMXS5-pBbxjQ/viewform?usp=sf_link" target="_blank" class="form-link">Admission</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="programs" class="program-section">
+            <h2>Select a Program</h2>
+            <div class="program-grid">
+                <div class="program-tile" onclick="window.location.href='elementary.html'">
+                    <h3>Elementary</h3>
+                </div>
+                <div class="program-tile" onclick="window.location.href='highschool.html'">
+                    <h3 >High School</h3>
+                </div>
+                <div class="program-tile" onclick="window.location.href='seniorHighschool.html'">
+                    <h3>Senior High School</h3>
+                </div>
+                <div class="program-tile" onclick="window.location.href='college.html'">
+                    <h3>College</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics" class="info-section">
+            <h2>Key Metrics</h2>
+            <div class="metric">
+                <h3>Student Satisfaction</h3>
+                <p>85%</p>
+            </div>
+            <div class="metric">
+                <h3>Events Attended</h3>
+                <p>120</p>
+            </div>
+        </section>
+
+        <section id="events" class="info-section">
+            <h2>NEWS!</h2>
+            <ul>
+                <li>November 12, 2024 - Mental Health Awareness Seminar for parents</li>
+                <li>November 13, 2024 - MSEUF-C I Celebrates World Mental Health Day</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="info-section" style="background: none;">
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:studentaffairs@example.com">studentaffairs@example.com</a></p>
+            <p>Phone: <a href="tel:+123456789">+1 (234) 567-890</a></p>
+            <p>Zoom: <a href="#">Join Zoom Meeting</a></p>
+        </section>
+
+        <section id="resources" class="info-section" style="background: none;">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="#">Student Handbook</a></li>
+                <li><a href="#">Insurance Resources</a></li>
+                <li><a href="#">Privacy Policies</a></li>
+            </ul>
+        </section>
+
+        <section id="chatAI" class="info-section">
+            <h2>Chat with AI</h2>
+            <div id="chatWindow">
+                <div id="messages"></div>
+                <input type="text" id="userInput" placeholder ="Type your message..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Office of Student Affairs and Services</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

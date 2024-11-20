@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill a Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Fill Out the Form</h1>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="program">Program:</label>
+        <select id="program" required>
+            <option value="elementary">Elementary</option>
+            <option value="highschool">High School</option>
+            <option value="seniorHighschool">Senior High School</option>
+            <option value="college">College</option>
+        </select>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Collect data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const program = document.getElementById('program').value;
+
+            // Store data (could be sent to a server or stored locally)
+            localStorage.setItem('formData', JSON.stringify({ name, email, program }));
+
+            alert("Form submitted successfully!");
+            // Optionally redirect or clear the form
+            // window.location.href = 'thank-you.html'; // Redirect to a thank you page
+        });
+    </script>
+</body>
+</html>
